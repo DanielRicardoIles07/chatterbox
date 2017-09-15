@@ -16,6 +16,7 @@
 body, html {
     height: 100%;
     margin: 0;
+    font-family: "Segoe UI",Arial,sans-serif;
 }
 
   p {font-size: 16px;}
@@ -40,12 +41,12 @@ body, html {
       color: #fff;
   }
   .container-fluid {
-      padding-top: 70px;
+      padding-top: 50px;
       padding-bottom: 70px;
   }
   .navbar {
-      padding-top: 15px;
-      padding-bottom: 15px;
+      padding-top: 10px;
+      padding-bottom: 10px;
       border: 0;
       border-radius: 0;
       margin-bottom: 0;
@@ -84,6 +85,10 @@ body, html {
   background-color: #ddd;
   text-align: center;
   cursor: pointer;
+}
+.tittle{
+  color: black;
+  font-family: "Segoe UI",Arial,sans-serif;;
 }
 
 </style>
@@ -124,19 +129,56 @@ body, html {
     <button class="btn btn-success">Get started</button>
   </div>
 </div>
-
 <div class="container-fluid bg-3 text-center">    
   <h2 class="margin"> <span class="glyphicon glyphicon-pushpin"></span>Outstanding</h2><br>
   <div class="row">
     <div class="col-sm-4">
+      <h3 class="tittle">HTML</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       <img src="{{ asset('img/developer.jpg') }} " class="img-responsive margin" style="width:100%" alt="Image">
     </div>
     <div class="col-sm-4"> 
+      <h3 class="tittle">CSS</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       <img src="{{ asset('img/developer.jpg') }} " class="img-responsive margin" style="width:100%" alt="Image">
     </div>
     <div class="col-sm-4"> 
+      <h3 class="tittle">JavaScript</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <img src="{{ asset('img/developer.jpg') }} " class="img-responsive margin" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-4"> 
+      <h3 class="tittle">SQL</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <img src="{{ asset('img/developer.jpg') }} " class="img-responsive margin" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-4"> 
+      <h3 class="tittle">PHP</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <img src="{{ asset('img/developer.jpg') }} " class="img-responsive margin" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-4"> 
+      <h3 class="tittle">Bootstrap</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <img src="{{ asset('img/developer.jpg') }} " class="img-responsive margin" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-4"> 
+      <h3 class="tittle">Web Resposive CSS</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <img src="{{ asset('img/developer.jpg') }} " class="img-responsive margin" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-4"> 
+      <h3 class="tittle">Color Picker</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <img src="{{ asset('img/developer.jpg') }} " class="img-responsive margin" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-4"> 
+      <h3 class="tittle">JQuery</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <img src="{{ asset('img/developer.jpg') }} " class="img-responsive margin" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-4"> 
+      <h3 class="tittle">Templates web responsive</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       <img src="{{ asset('img/developer.jpg') }} " class="img-responsive margin" style="width:100%" alt="Image">
     </div>
@@ -145,7 +187,9 @@ body, html {
     <div class="col-sm-4">
     </div>
     <div class="col-sm-4">
-      <a href="{{route('login')}}"><button class="btn btn-primary">Sign in</button></a>
+      <div class="hero-text">
+      <a href="{{route('login')}}"><button class="btn btn-success">Sign In</button></a>
+    </div>
     </div>
   </div>
 </div>
