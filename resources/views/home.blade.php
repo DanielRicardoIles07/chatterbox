@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <title>Developers</title>
+  <link rel="icon" href="{!! asset('img/code.ico') !!}"/>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -41,19 +42,18 @@
     }
     a{
       text-decoration: none;
-      color: black; 
+      color: #686868; 
     }
     a:hover{
       text-decoration: none;
-
+      color: black;
     }
-   
 
   </style>
 </head>
 <body>
 
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-inverse">
   <div class="container-fluid"> 
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -62,12 +62,12 @@
         <span class="icon-bar"></span>                        
       </button>
       <a class="navbar-brand" href="{{route('home')}}">
-        <img src="{{ asset('img/logo.png') }} " class="img-resposive"
-            srcset="{{ asset('img/logo.png') }} 2x, 
-             {{ asset('img/logo.png') }} 768w, 
-             {{ asset('img/logo.png') }} 768w 2x, 
-             {{ asset('img/logo.png') }} 1200w, 
-             {{ asset('img/logo.png') }} 1200w 2x">
+        <img src="{{ asset('img/logo_code.png') }} " class="img-resposive"
+            srcset="{{ asset('img/logo_code.png') }} 2x, 
+             {{ asset('img/logo_code.png') }} 768w, 
+             {{ asset('img/logo_code.png') }} 768w 2x, 
+             {{ asset('img/logo_code.png') }} 1200w, 
+             {{ asset('img/logo_code.png') }} 1200w 2x">
       </a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
@@ -92,7 +92,7 @@
   
 <div class="container-fluid text-center">    
   <div class="row content">
-    <div class="col-sm-2 sidenav">
+    <div class="col-sm-2 sidenav" id="links">
       <p><a href="#"><h4><span class="glyphicon glyphicon-user"></span> Developers</a></h4></p>
       <p><a href="#">Link</a></p>
       <p><a href="#">Link</a></p>

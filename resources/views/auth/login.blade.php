@@ -49,10 +49,8 @@
 
     <div class="form-actions clearfix">
       <a class="pull-left" href="">¿Forgot your password?</a>
-
-      <a href=""><button class="btn btn-primary" type="submit">
-       Log In
-      </button></a>
+      <a href=""><button class="btn btn-primary" type="submit">Sign in</button></a>
+      <!-- <a href="{{url('/welcome')}}" ><button class="btn btn-danger" type="button">Cancel</button></a> -->
      </div>
 </form>
     </div>
