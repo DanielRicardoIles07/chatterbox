@@ -9,6 +9,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
+  body, html{
+    font-family: "Segoe UI",Arial,sans-serif;
+  }
     /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
       margin-bottom: 0;
@@ -93,21 +96,15 @@
 <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-2 sidenav" id="links">
-      <p><a href="#"><h4><span class="glyphicon glyphicon-user"></span> Developers</a></h4></p>
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
+      <p><a href="{{ url('developers/') }}"><h5><span class="glyphicon glyphicon-user"></span> Developers</a></h5></p>
+      <p><a href="#"><h5><span class="glyphicon glyphicon-comment"></span> Communication</a></h5></p>
+      <p><a href="#"><h5><span class="glyphicon glyphicon-comment"></span> Communication</a></h5></a></p>
     </div>
     <div class="col-sm-8 text-left"> 
       
       <div class="col-sm-110 text-center ">
       <h1 id="welcome" class="text-left">Welcome <b>{{ Auth::user()->name }}</b></h1>
-        <img src="{{ asset('img/Mensajero-de-pie.png') }} " class="img-resposive"
-            srcset="{{ asset('img/Mensajero-de-pie.png') }} 2x, 
-             {{ asset('img/Mensajero-de-pie.png') }} 768w, 
-             {{ asset('img/Mensajero-de-pie.png') }} 768w 2x, 
-             {{ asset('img/Mensajero-de-pie.png') }} 1200w, 
-             {{ asset('img/Mensajero-de-pie.png') }} 1200w 2x">
-      
+      <img src="{{ asset('img/developer.jpg') }} " class="img-responsive margin" style="width:80%"  alt="Image">
     </div>
       <div class="col-sm-9">
       <h4><small>RECENT POSTS</small></h4>
