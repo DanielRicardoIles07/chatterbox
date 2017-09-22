@@ -103,19 +103,28 @@
     <div class="col-sm-8 text-left"> 
       
       <div class="col-sm-110 text-center ">
-        <h2>
-      @yield('titulo')
-      </h2>
+       
+          <h1 id="developers" class="text-left">@yield('titulo')</h1>
+        
     </div>
       <div class="col-sm-9">
       @yield('content')
       </div>
 </div>
+<div class="col-sm-2 sidenav">
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div>
 </div>
 </div>
 
-<footer class="container-fluid text-center" id="footer">
-  <p>Footer Text</p>
+<footer class="container-fluid bg-4 text-center">
+  <br>
+  <p>Developers Copyright 2017 |<a href="http://localhost:8000/welcome"> www.developers.com</a></p> 
 </footer>
 
 </body>

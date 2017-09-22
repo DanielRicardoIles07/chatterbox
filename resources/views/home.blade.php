@@ -136,7 +136,7 @@
       
       <div class="row">
         <div class="col-sm-2 text-center">
-          <img src="bandmember.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+          <img src="{{ asset('img/Mensajero-de-pie.png') }}" class="img-circle" height="65" width="65" alt="Avatar">
         </div>
         <div class="col-sm-10">
           <h4>Anja <small>Sep 29, 2015, 9:12 PM</small></h4>

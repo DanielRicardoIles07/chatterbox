@@ -19,5 +19,6 @@ Auth::routes();
 Route::get('/welcome', 'Controller@index');
 Route::get('auth/login');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('developers/completeprofile', 'DevelopersEditController');
 Route::resource('developers/', 'DevelopersController');
 
