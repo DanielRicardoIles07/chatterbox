@@ -77,24 +77,6 @@
     </div>
 
     <div class="container">
-
-      <div class="page-header" id="banner">
-        <div class="row">
-          <div class="col-lg-8 col-md-7 col-sm-6">
-            <h2><b>Charlatanes</b></h2>
-            <p class="lead">Conocelos</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-3 col-md-3 col-sm-4">
-            <div class="list-group table-of-contents">
-              @foreach($chatters as $ch)
-              <a class="list-group-item" href="#navbar"><span class="glyphicon glyphicon-user"></span> {{$ch->name}}</a>
-              @endforeach
-            </div>
-          </div>
-        </div>
-      </div>
       <footer>
         <div class="row">
           <div class="col-lg-12">
