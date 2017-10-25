@@ -19,7 +19,7 @@ class DevelopersController extends Controller
         $developers = DB::table('users')
                     ->orderBy('name', 'asc')
                     ->get();
-        return view('developers/index', ["developers" => $developers]);
+        return view('home', ["developers" => $developers]);
     }
 
     

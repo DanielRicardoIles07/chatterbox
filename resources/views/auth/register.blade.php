@@ -18,7 +18,7 @@
   </head>
   <style type="text/css">
     body{
-      background-image: url("{!! asset('img/wp5.jpg') !!}");
+      background-image: url("{!! asset('img/wp2.jpg') !!}");
     }
   </style>
   <body>

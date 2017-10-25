@@ -51,7 +51,7 @@
 
           <div class="form-group">
             <div class="input-group field {{ $errors->has('email') ? ' has-error' : '' }}">
-              <input autofocus="" type="email" class="form-control" id="email" placeholder="Correo Electronico" name="email">
+              <input autofocus="" type="email" class="form-control" id="email" placeholder="Correo Electronico" name="email" required="">
               <label for="uLogin" class="input-group-addon glyphicon glyphicon-envelope"></label>
             </div>
           </div> 

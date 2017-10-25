@@ -3,6 +3,10 @@
 namespace chatterbox\Http\Controllers;
 
 use Illuminate\Http\Request;
+use chatterbox\Developersmodel;
+use Illuminate\Support\Facades\Auth;
+use chatterbox\Http\Requests\DevelopersFormRequest;
+use DB;
 
 class HomeController extends Controller
 {
@@ -21,8 +25,10 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('home');
+    public function index(){
+        $chatters = DB::table('users')
+                    ->orderBy('name', 'asc')
+                    ->get();
+        return view('home', ["chatters" => $chatters]);
     }
 }
