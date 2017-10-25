@@ -1,104 +1,680 @@
 
-@extends('layouts.app')
 
-@section('body')
-    <div class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <a href="../" class="navbar-brand">ChatterBox</a>
-          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div class="navbar-collapse collapse" id="navbar-main">
-          <ul class="nav navbar-nav">
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Themes <span class="caret"></span></a>
-              <ul class="dropdown-menu" aria-labelledby="themes">
-                <li><a href="../default/">Default</a></li>
-                <li class="divider"></li>
-                <li><a href="../cerulean/">Cerulean</a></li>
-                <li><a href="../cosmo/">Cosmo</a></li>
-                <li><a href="../cyborg/">Cyborg</a></li>
-                <li><a href="../darkly/">Darkly</a></li>
-                <li><a href="../flatly/">Flatly</a></li>
-                <li><a href="../journal/">Journal</a></li>
-                <li><a href="../lumen/">Lumen</a></li>
-                <li><a href="../paper/">Paper</a></li>
-                <li><a href="../readable/">Readable</a></li>
-                <li><a href="../sandstone/">Sandstone</a></li>
-                <li><a href="../simplex/">Simplex</a></li>
-                <li><a href="../slate/">Slate</a></li>
-                <li><a href="../solar/">Solar</a></li>
-                <li><a href="../spacelab/">Spacelab</a></li>
-                <li><a href="../superhero/">Superhero</a></li>
-                <li><a href="../united/">United</a></li>
-                <li><a href="../yeti/">Yeti</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="../help/">Help</a>
-            </li>
-            <li>
-              <a href="http://news.bootswatch.com">Blog</a>
-            </li>
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">Flatly <span class="caret"></span></a>
-              <ul class="dropdown-menu" aria-labelledby="download">
-                <li><a href="https://jsfiddle.net/bootswatch/jmg3gykg/">Open Sandbox</a></li>
-                <li class="divider"></li>
-                <li><a href="./bootstrap.min.css">bootstrap.min.css</a></li>
-                <li><a href="./bootstrap.css">bootstrap.css</a></li>
-                <li class="divider"></li>
-                <li><a href="./variables.less">variables.less</a></li>
-                <li><a href="./bootswatch.less">bootswatch.less</a></li>
-                <li class="divider"></li>
-                <li><a href="./_variables.scss">_variables.scss</a></li>
-                <li><a href="./_bootswatch.scss">_bootswatch.scss</a></li>
-              </ul>
-            </li>
-          </ul>
 
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="http://builtwithbootstrap.com/" target="_blank">Built With Bootstrap</a></li>
-            <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                 Logout
-                </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                  {{ csrf_field() }}
-                </form>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>
+      
+        Home &middot; Application theme &middot; Official Bootstrap Themes
+      
+    </title>
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <link href="https://bootstrap-themes.github.io/application/assets/css/toolkit.css" rel="stylesheet">
+    
+    <link href="https://bootstrap-themes.github.io/application/assets/css/application.css" rel="stylesheet">
+
+    <style>
+      /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+      /* this chunk of css is not part of the toolkit :) */
+      body {
+        width: 1px;
+        min-width: 100%;
+        *width: 100%;
+      }
+    </style>
+
+  </head>
+
+
+<body class="bjy">
+  
+
+
+<div class="bkk" id="app-growl"></div>
+
+<nav class="ck mo zq mt qh app-navbar">
+
+  <a class="e" href="index.html">
+    <img src="https://bootstrap-themes.github.io/application/assets/img/brand-white.png" alt="brand">
+  </a>
+
+  <button
+    class="mk blk se"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarResponsive"
+    aria-controls="navbarResponsive"
+    aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="ml"></span>
+  </button>
+
+  <div class="collapse f" id="navbarResponsive">
+    <ul class="navbar-nav adn">
+      <li class="md active">
+        <a class="mb" href="index.html">Home <span class="zt">(current)</span></a>
+      </li>
+      <li class="md">
+        <a class="mb" href="profile/index.html">Profile</a>
+      </li>
+      <li class="md">
+        <a class="mb" data-toggle="modal" href="#msgModal">Messages</a>
+      </li>
+      <li class="md">
+        <a class="mb" href="docs/index.html">Docs</a>
+      </li>
+
+      <li class="md se">
+        <a class="mb" href="notifications/index.html">Notifications</a>
+      </li>
+      <li class="md se">
+        <a class="mb" data-action="growl">Growl</a>
+      </li>
+      <li class="md se">
+        <a class="mb" href="login/index.html">Logout</a>
+      </li>
+
+    </ul>
+
+    <form class="kl zc ro sk">
+      <input class="form-control" type="text" data-action="grow" placeholder="Search">
+    </form>
+
+    <ul id="#js-popoverContent" class="nav navbar-nav zc aah ro sk">
+      <li class="md">
+        <a class="g mb" href="notifications/index.html">
+          <span class="h avv"></span>
+        </a>
+      </li>
+      <li class="md aax">
+        <button class="cg bll blm bkf" data-toggle="popover">
+          <img class="rl" src="assets/img/avatar-dhg.png">
+        </button>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav ro" id="js-popoverContent">
+      <li class="md"><a class="mb" href="#" data-action="growl">Growl</a></li>
+      <li class="md"><a class="mb" href="login/index.html">Logout</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="cd fade" id="msgModal" tabindex="-1" role="dialog" aria-labelledby="bln" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="d">
+        <h5 class="modal-title">Messages</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+
+      <div class="modal-body abv js-modalBody">
+        <div class="att">
+          <div class="bkt cj ca js-msgGroup">
+            <a href="#" class="b os">
+              <div class="oq">
+                <img class="rl bkp ru uk abc" src="https://bootstrap-themes.github.io/application/assets/img/avatar-fat.jpg">
+                <div class="or">
+                  <strong>Jacob Thornton</strong> and <strong>1 other</strong>
+                  <div class="bld">
+                    Aenean eu leo quam. Pellentesque ornare sem lacinia quam &hellip;
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="b os">
+              <div class="oq">
+                <img class="rl bkp ru uk abc" src="assets/img/avatar-mdo.png">
+                <div class="or">
+                  <strong>Mark Otto</strong> and <strong>3 others</strong>
+                  <div class="bld">
+                    Brunch sustainable placeat vegan bicycle rights yeah…
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="b os">
+              <div class="oq">
+                <img class="rl bkp ru uk abc" src="https://bootstrap-themes.github.io/application/assets/img/avatar-dhg.png">
+                <div class="or">
+                  <strong>Dave Gamache</strong>
+                  <div class="bld">
+                    Brunch sustainable placeat vegan bicycle rights yeah…
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="b os">
+              <div class="oq">
+                <img class="rl bkp ru uk abc" src="assets/img/avatar-fat.jpg">
+                <div class="or">
+                  <strong>Jacob Thornton</strong> and <strong>1 other</strong>
+                  <div class="bld">
+                    Aenean eu leo quam. Pellentesque ornare sem lacinia quam &hellip;
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="b os">
+              <div class="oq">
+                <img class="rl bkp ru uk abc" src="assets/img/avatar-mdo.png">
+                <div class="or">
+                  <strong>Mark Otto</strong> and <strong>3 others</strong>
+                  <div class="bld">
+                    Brunch sustainable placeat vegan bicycle rights yeah…
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="b os">
+              <div class="oq">
+                <img class="rl bkp ru uk abc" src="assets/img/avatar-dhg.png">
+                <div class="or">
+                  <strong>Dave Gamache</strong>
+                  <div class="bld">
+                    Brunch sustainable placeat vegan bicycle rights yeah…
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="b os">
+              <div class="oq">
+                <img class="rl bkp ru uk abc" src="assets/img/avatar-fat.jpg">
+                <div class="or">
+                  <strong>Jacob Thornton</strong> and <strong>1 other</strong>
+                  <div class="bld">
+                    Aenean eu leo quam. Pellentesque ornare sem lacinia quam &hellip;
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="b os">
+              <div class="oq">
+                <img class="rl bkp ru uk abc" src="assets/img/avatar-mdo.png">
+                <div class="or">
+                  <strong>Mark Otto</strong> and <strong>3 others</strong>
+                  <div class="bld">
+                    Brunch sustainable placeat vegan bicycle rights yeah…
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="b os">
+              <div class="oq">
+                <img class="rl bkp ru uk abc" src="assets/img/avatar-dhg.png">
+                <div class="or">
+                  <strong>Dave Gamache</strong>
+                  <div class="bld">
+                    Brunch sustainable placeat vegan bicycle rights yeah…
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="ro aba js-conversation">
+            <ul class="bkt bkz">
+              <li class="oq blc abk">
+                <div class="or">
+                  <div class="bla">
+                    Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.
+                  </div>
+                  <div class="blb">
+                    <small class="asz">
+                      <a href="#">Dave Gamache</a> at 4:20PM
+                    </small>
+                  </div>
+                </div>
+                <img class="rl bkp ru uk abe" src="assets/img/avatar-dhg.png">
               </li>
-          </ul>
 
+              <li class="oq abk">
+                <img class="rl bkp ru uk abc" src="assets/img/avatar-fat.jpg">
+                <div class="or">
+                  <div class="bla">
+                   Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+                  </div>
+                  <div class="bla">
+                   Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                  </div>
+                  <div class="bla">
+                   Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.
+                  </div>
+                  <div class="blb">
+                    <small class="asz">
+                      <a href="#">Fat</a> at 4:28PM
+                    </small>
+                  </div>
+                </div>
+              </li>
+
+              <li class="oq abk">
+                <img class="rl bkp ru uk abc" src="assets/img/avatar-mdo.png">
+                <div class="or">
+                  <div class="bla">
+                   Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean lacinia bibendum nulla sed consectetur.
+                  </div>
+                  <div class="bla">
+                   Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+                  </div>
+                  <div class="blb">
+                    <small class="asz">
+                      <a href="#">Mark Otto</a> at 4:20PM
+                    </small>
+                  </div>
+                </div>
+              </li>
+
+              <li class="oq blc abk">
+                <div class="or">
+                  <div class="bla">
+                    Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.
+                  </div>
+                  <div class="blb">
+                    <small class="asz">
+                      <a href="#">Dave Gamache</a> at 4:20PM
+                    </small>
+                  </div>
+                </div>
+                <img class="rl bkp ru uk abe" src="assets/img/avatar-dhg.png">
+              </li>
+
+              <li class="oq abk">
+                <img class="rl bkp ru uk abc" src="assets/img/avatar-fat.jpg">
+                <div class="or">
+                  <div class="bla">
+                   Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+                  </div>
+                  <div class="bla">
+                   Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                  </div>
+                  <div class="bla">
+                   Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.
+                  </div>
+                  <div class="blb">
+                    <small class="asz">
+                      <a href="#">Fat</a> at 4:28PM
+                    </small>
+                  </div>
+                </div>
+              </li>
+
+              <li class="oq abk">
+                <img class="rl bkp ru uk abc" src="assets/img/avatar-mdo.png">
+                <div class="or">
+                  <div class="bla">
+                   Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean lacinia bibendum nulla sed consectetur.
+                  </div>
+                  <div class="bla">
+                   Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+                  </div>
+                  <div class="blb">
+                    <small class="asz">
+                      <a href="#">Mark Otto</a> at 4:20PM
+                    </small>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cd fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="blo" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="d">
+        <h4 class="modal-title">Users</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+
+      <div class="modal-body abv">
+        <div class="att">
+          <ul class="bkt cj ca">
+            <li class="b">
+              <div class="oq zy">
+                <img class="bkp ru uk abc" src="assets/img/avatar-fat.jpg">
+                <div class="or">
+                  <button class="cg kt ll zc">
+                    <span class="c blp"></span> Follow
+                  </button>
+                  <strong>Jacob Thornton</strong>
+                  <p>@fat - San Francisco</p>
+                </div>
+              </div>
+            </li>
+            <li class="b">
+              <div class="oq zy">
+                <img class="bkp ru uk abc" src="assets/img/avatar-dhg.png">
+                <div class="or">
+                  <button class="cg kt ll zc">
+                    <span class="c blp"></span> Follow
+                  </button>
+                  <strong>Dave Gamache</strong>
+                  <p>@dhg - Palo Alto</p>
+                </div>
+              </div>
+            </li>
+            <li class="b">
+              <div class="oq zy">
+                <img class="bkp ru uk abc" src="assets/img/avatar-mdo.png">
+                <div class="or">
+                  <button class="cg kt ll zc">
+                    <span class="c blp"></span> Follow
+                  </button>
+                  <strong>Mark Otto</strong>
+                  <p>@mdo - San Francisco</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="by acy adh">
+  <div class="dp">
+    <div class="fj">
+      <div class="mu blf abk">
+        <div class="na" style="background-image: url(assets/img/iceland.jpg);"></div>
+        <div class="mv arx">
+          <a href="profile/index.html">
+            <img
+              class="blg"
+              src="assets/img/avatar-dhg.png">
+          </a>
+
+          <h6 class="mw">
+            <a class="bjx" href="profile/index.html">Dave Gamache</a>
+          </h6>
+
+          <p class="abk">I wish i was a little bit taller, wish i was a baller, wish i had a girl… also.</p>
+
+          <ul class="blh">
+            <li class="bli">
+              <a href="#userModal" class="bjx" data-toggle="modal">
+                Friends
+                <h6 class="aal">12M</h6>
+              </a>
+            </li>
+
+            <li class="bli">
+              <a href="#userModal" class="bjx" data-toggle="modal">
+                Enemies
+                <h6 class="aal">1</h6>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mu sh sp abk">
+        <div class="mv">
+          <h6 class="abd">About <small>· <a href="#">Edit</a></small></h6>
+          <ul class="dc atd">
+            <li><span class="asz h awk abc"></span>Went to <a href="#">Oh, Canada</a>
+            <li><span class="asz h biz abc"></span>Became friends with <a href="#">Obama</a>
+            <li><span class="asz h bax abc"></span>Worked at <a href="#">Github</a>
+            <li><span class="asz h bbn abc"></span>Lives in <a href="#">San Francisco, CA</a>
+            <li><span class="asz h bcw abc"></span>From <a href="#">Seattle, WA</a>
+          </ul>
+        </div>
+      </div>
+
+       <div class="mu sh sp abk">
+        <div class="mv">
+          <h6 class="abd">Photos <small>· <a href="#">Edit</a></small></h6>
+          <div data-grid="images" data-target-height="150">
+            <div>
+              <img data-width="640" data-height="640" data-action="zoom" src="assets/img/instagram_5.jpg">
+            </div>
+
+            <div>
+              <img data-width="640" data-height="640" data-action="zoom" src="assets/img/instagram_6.jpg">
+            </div>
+
+            <div>
+              <img data-width="640" data-height="640" data-action="zoom" src="assets/img/instagram_7.jpg">
+            </div>
+
+            <div>
+              <img data-width="640" data-height="640" data-action="zoom" src="assets/img/instagram_8.jpg">
+            </div>
+
+            <div>
+              <img data-width="640" data-height="640" data-action="zoom" src="assets/img/instagram_9.jpg">
+            </div>
+
+            <div>
+              <img data-width="640" data-height="640" data-action="zoom" src="assets/img/instagram_10.jpg">
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="container">
-      <footer>
-        <div class="row">
-          <div class="col-lg-12">
+    <div class="fm">
 
-            <ul class="list-unstyled">
-              <li class="pull-right"><a href="#top">Back to top</a></li>
-              <li><a href="http://news.bootswatch.com" onclick="pageTracker._link(this.href); return false;">Blog</a></li>
-              <li><a href="https://feeds.feedburner.com/bootswatch">RSS</a></li>
-              <li><a href="https://twitter.com/bootswatch">Twitter</a></li>
-              <li><a href="https://github.com/thomaspark/bootswatch/">GitHub</a></li>
-              <li><a href="../help/#api">API</a></li>
-              <li><a href="../help/#support">Support</a></li>
-            </ul>
-            <p>Made by <a href="http://thomaspark.co" rel="nofollow">Thomas Park</a>. Contact him at <a href="/cdn-cgi/l/email-protection#e195898e8c8092a1838e8e95929680958289cf828e8c"><span class="__cf_email__" data-cfemail="34405c5b59554774565b5b4047435540575c1a575b59">[email&#160;protected]</span></a>.</p>
-            <p>Code released under the <a href="https://github.com/thomaspark/bootswatch/blob/gh-pages/LICENSE">MIT License</a>.</p>
-            <p>Based on <a href="https://getbootstrap.com" rel="nofollow">Bootstrap</a>. Icons from <a href="https://fortawesome.github.io/Font-Awesome/" rel="nofollow">Font Awesome</a>. Web fonts from <a href="https://www.google.com/webfonts" rel="nofollow">Google</a>.</p>
+      <ul class="ca bkt bku abk">
 
+        <li class="oq b acx">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Message">
+            <div class="jq">
+              <button type="button" class="cg kt uo">
+                <span class="h awl"></span>
+              </button>
+            </div>
           </div>
-        </div>
+        </li>
 
-      </footer>
+        <li class="oq b acx">
+          <img
+            class="bkp ru uk abc"
+            src="assets/img/avatar-dhg.png">
+          <div class="or">
+            <div class="bky">
+              <small class="zc asz">4 min</small>
+              <h6>Dave Gamache</h6>
+            </div>
 
+            <p>
+              Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            </p>
 
+            <div class="bkv" data-grid="images">
+              <div style="display: none">
+                <img data-action="zoom" data-width="1050" data-height="700" src="assets/img/unsplash_1.jpg">
+              </div>
+
+              <div style="display: none">
+                <img data-action="zoom" data-width="640" data-height="640" src="assets/img/instagram_1.jpg">
+              </div>
+
+              <div style="display: none">
+                <img data-action="zoom" data-width="640" data-height="640" src="assets/img/instagram_13.jpg">
+              </div>
+
+              <div style="display: none">
+                <img data-action="zoom" data-width="1048" data-height="700" src="assets/img/unsplash_2.jpg">
+              </div>
+            </div>
+
+            <ul class="bkt aaw">
+              <li class="oq abd">
+                <img
+                  class="bkp ru uk abc"
+                  src="assets/img/avatar-fat.jpg">
+                <div class="or">
+                  <strong>Jacon Thornton: </strong>
+                  Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis.
+                </div>
+              </li>
+              <li class="oq">
+                <img
+                  class="bkp ru uk abc"
+                  src="assets/img/avatar-mdo.png">
+                <div class="or">
+                  <strong>Mark Otto: </strong>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="oq b acx">
+          <img
+            class="bkp ru uk abc"
+            src="assets/img/avatar-fat.jpg">
+          <div class="or">
+            <div class="bla">
+              <div class="bky">
+                <small class="zc asz">12 min</small>
+                <h6>Jacob Thornton</h6>
+              </div>
+              <p>
+                Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+            </div>
+          </div>
+        </li>
+
+        <li class="oq b acx">
+          <img
+            class="bkp ru uk abc"
+            src="assets/img/avatar-mdo.png">
+          <div class="or">
+            <div class="bky">
+              <small class="zc asz">34 min</small>
+              <h6>Mark Otto</h6>
+            </div>
+
+            <p>
+              Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+            </p>
+
+            <div class="bkv" data-grid="images">
+              <img style="display: none" data-width="640" data-height="640" data-action="zoom" src="assets/img/instagram_3.jpg">
+            </div>
+
+            <ul class="bkt">
+              <li class="oq">
+                <img
+                  class="bkp ru uk abc"
+                  src="assets/img/avatar-dhg.png">
+                <div class="or">
+                  <strong>Dave Gamache: </strong>
+                  Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis.
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
     </div>
-@endsection
+    <div class="fj">
+      <div class="alert oj alert-dismissible ro sp" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <a class="oe" href="profile/index.html">Visit your profile!</a> Check your self, you aren't looking well.
+      </div>
+
+      <div class="mu abk ro sp">
+        <div class="mv">
+          <h6 class="abd">Sponsored</h6>
+          <div data-grid="images" data-target-height="150">
+            <img class="bkp" data-width="640" data-height="640" data-action="zoom" src="assets/img/instagram_2.jpg">
+          </div>
+          <p><strong>It might be time to visit Iceland.</strong> Iceland is so chill, and everything looks cool here. Also, we heard the people are pretty nice. What are you waiting for?</p>
+          <button class="cg la ll">Buy a ticket</button>
+        </div>
+      </div>
+
+      <div class="mu abk ro sp">
+        <div class="mv">
+        <h6 class="abd">Likes <small>· <a href="#">View All</a></small></h6>
+        <ul class="bkt bku">
+          <li class="oq aaw">
+            <img
+              class="bkp ru uk abc"
+              src="assets/img/avatar-fat.jpg">
+            <div class="or">
+              <strong>Jacob Thornton</strong> @fat
+              <div class="bkx">
+                <button class="cg la ll">
+                  <span class="h auf"></span> Follow</button>
+              </div>
+            </div>
+          </li>
+           <li class="oq">
+            <a class="blq" href="#">
+              <img
+                class="bkp ru uk abc"
+                src="assets/img/avatar-mdo.png">
+            </a>
+            <div class="or">
+              <strong>Mark Otto</strong> @mdo
+              <div class="bkx">
+                <button class="cg la ll">
+                  <span class="h auf"></span> Follow</button></button>
+              </div>
+            </div>
+          </li>
+        </ul>
+        </div>
+        <div class="nb">
+          Dave really likes these nerds, no one knows why though.
+        </div>
+      </div>
+
+      <div class="mu blj">
+        <div class="mv">
+          © 2018 Bootstrap
+          <a href="#">About</a>
+          <a href="#">Help</a>
+          <a href="#">Terms</a>
+          <a href="#">Privacy</a>
+          <a href="#">Cookies</a>
+          <a href="#">Ads </a>
+          <a href="#">Info</a>
+          <a href="#">Brand</a>
+          <a href="#">Blog</a>
+          <a href="#">Status</a>
+          <a href="#">Apps</a>
+          <a href="#">Jobs</a>
+          <a href="#">Advertise</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <script src="https://bootstrap-themes.github.io/application/assets/js/jquery.min.js"></script>
+    <script src="https://bootstrap-themes.github.io/application/assets/js/popper.min.js"></script>
+    <script src="https://bootstrap-themes.github.io/application/assets/js/chart.js"></script>
+    <script src="https://bootstrap-themes.github.io/application/assets/js/toolkit.js"></script>
+    <script src="https://bootstrap-themes.github.io/application/assets/js/application.js"></script>
+    <script>
+      // execute/clear BS loaders for docs
+      $(function(){while(window.BS&&window.BS.loader&&window.BS.loader.length){(window.BS.loader.pop())()}})
+    </script>
+  </body>
+</html>
+

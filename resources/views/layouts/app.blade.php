@@ -16,7 +16,7 @@
 
 <!-- title tag-->
 <title>
-  Application &ndash; Bootstrap Themes
+  Babbler
 </title>
 
 <!-- search engine -->
