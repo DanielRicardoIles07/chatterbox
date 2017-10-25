@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace chatterbox;
 
 use Illuminate\Database\Eloquent\Model;
 

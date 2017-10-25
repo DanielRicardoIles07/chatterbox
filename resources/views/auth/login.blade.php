@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}" style="">
 <head>
+    <!--login-->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +9,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Developers | Login</title>
+    <title>ChatterBox</title>
     <!--<link rel="shortcut icon" href="{{{ asset('img/favicon.png') }}}">-->
     <link rel="icon" href="{!! asset('img/code.ico') !!}"/>
     <!-- Styles -->
@@ -52,7 +53,7 @@
       <a href=""><button class="btn btn-primary" type="submit">Sign in</button></a>
       <!-- <a href="{{url('/welcome')}}" ><button class="btn btn-danger" type="button">Cancel</button></a> -->
      </div>
-</form>
+    </form>
     </div>
     <div class="bottom-links">
         <a href="{{route('register')}}">¿You haven't a account? <strong>Sign Up here</strong></a>

@@ -1,204 +1,107 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
-<head>
-  <!-- Theme Made By www.w3schools.com - No Copyright -->
-  <title>Developers</title>
-  <link rel="icon" href="{!! asset('img/code.ico') !!}"/>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Hind|Slabo+27px" rel="stylesheet">
-  <!--scripts-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style>
-body, html {
-    height: 100%;
-    margin: 0;
-    font-family: "Segoe UI",Arial,sans-serif;
-}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=500, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="{!! asset('css/login.css') !!}">
+    <title>ChatterBox</title>
 
-  p {font-size: 16px;}
-  .margin {
-    margin-bottom: 45px;
-    color: black;
-  }
-  .bg-1 { 
-      background-color: #1abc9c; /* Green */
-      color: #ffffff;
-  }
-  .bg-2 { 
-      background-color: #474e5d; /* Dark Blue */
-      color: #ffffff;
-  }
-  .bg-3 { 
-      background-color: #ffffff; /* White */
-      color: #555555;
-  }
-  .bg-4 { 
-      background-color: #2f2f2f; /* Black Gray */
-      color: #fff;
-  }
-  .container-fluid {
-      padding-top: 50px;
-      padding-bottom: 70px;
-  }
-  .navbar {
-      padding-top: 10px;
-      padding-bottom: 10px;
-      border: 0;
-      border-radius: 0;
-      margin-bottom: 0;
-      font-size: 15px;
-      /*letter-spacing: 5px;*/
-      font-family: "verdana";
+    <!-- Bootstrap core CSS -->
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/docs/4.0/examples/cover/cover.css" rel="stylesheet">
+  </head>
+  <style type="text/css">
+    body{
+      background-image: url("{!! asset('img/wp5.jpg') !!}");
+    }
+  </style>
+  <body>
 
-  }
-  .navbar-nav  li a:hover {
-      color: white !important;
-  }
-  .hero-image {
-  background-image: url("{{asset('img/developing-2.jpg')}}");
-  height: 50%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+          <header class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">ChatterBox</h3>
+              <nav class="nav nav-masthead">
+                <a class="nav-link active" href="{{ route('login') }}">Ingresar</a>
+                <a class="nav-link" href="{{ route('register') }}">Registrame</a>
+              </nav>
+            </div>
+          </header>
+          </div>
+          <div class="col-sm-4"></div>
+          
+          <div class="col-sm-4">
+            <div class="content-fluid">
 
-.hero-text {
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-}
+      <div class="modal-header">
+        <h4>Bienvenido</h4>
+      </div> 
 
-.hero-text button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 10px 25px;
-  color: black;
-  background-color: #ddd;
-  text-align: center;
-  cursor: pointer;
-}
-.tittle{
-  color: black;
-  font-family: "Segoe UI",Arial,sans-serif;;
-}
+      <div class="modal-body">
+         <form class="new_user" id="new_user" role="form" method="POST" action="{{ route('login') }}">
+            {{ csrf_field() }}
 
-</style>
-</head>
-<body>
+          <div class="form-group">
+            <div class="input-group field {{ $errors->has('email') ? ' has-error' : '' }}">
+              <input type="email" class="form-control" id="email" placeholder="Correo Electronico" name="email">
+              <label for="uLogin" class="input-group-addon glyphicon glyphicon-envelope"></label>
+            </div>
+          </div> 
+          @if ($errors->has('email'))
+                  <span class="help-block">
+                      <strong>{{ $errors->first('email') }}</strong>
+                  </span>
+          @endif
 
-<!-- Navbar -->
-<nav class="navbar navbar-inverse">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="{{url('/welcome')}}">
-        <img src="{{ asset('img/logo_code.png') }} " class="img-resposive"
-            srcset="{{ asset('img/logo_code.png') }} 2x, 
-             {{ asset('img/logo_code.png') }} 768w, 
-             {{ asset('img/logo_code.png') }} 768w 2x, 
-             {{ asset('img/logo_code.png') }} 1200w, 
-             {{ asset('img/logo_code.png') }} 1200w 2x">
+          <div class="form-group">
+            <div class="input-group field{{ $errors->has('password') ? ' has-error' : '' }}">
+              <input type="password" class="form-control" id="uPassword" placeholder="Password">
+              <label for="uPassword" class="input-group-addon glyphicon glyphicon-lock"></label>
+            </div> 
+          </div>
+          @if ($errors->has('email'))
+                  <span class="help-block">
+                      <strong>{{ $errors->first('email') }}</strong>
+                  </span>
+          @endif
+          
+      </div> 
+
+      <div class="modal-footer">
+        <label>
+        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Recordarme
+        </label>
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4"><button type="submit" class="btn btn-default">Ingresar</button></div>
+      </div>
+      <div>
+      <a class="btn-default" href="{{ route('password.request') }}">
+        ¿Olvidaste Tu contraseña?
       </a>
+      </div>
+      <br>
+    </form>
+          </div>
+          <div class="col-sm-4"></div>
+        </div>
+      </div>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="{{route('login')}}">Sign in</a></li>
-        <li><a href="{{route('register')}}">Sign up</a></li>
-        <li><a href="#">About us</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<div class="hero-image">
-  <div class="hero-text">
-    <h1 style="font-size:50px">Welcome Developers</h1>
-    <p></p>
-    <button class="btn btn-success">Get started</button>
-  </div>
-</div>
-<div class="container-fluid bg-3 text-center">    
-  <h2 class="margin"> <span class="glyphicon glyphicon-pushpin"></span>Outstanding</h2><br>
-  <div class="row">
-    <div class="col-sm-4">
-      <h3 class="tittle">HTML</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <img src="{{ asset('img/developer.jpg') }} " class="img-responsive margin" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-4"> 
-      <h3 class="tittle">CSS</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <img src="{{ asset('img/developer.jpg') }} " class="img-responsive margin" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-4"> 
-      <h3 class="tittle">JavaScript</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <img src="{{ asset('img/developer.jpg') }} " class="img-responsive margin" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-4"> 
-      <h3 class="tittle">SQL</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <img src="{{ asset('img/developer.jpg') }} " class="img-responsive margin" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-4"> 
-      <h3 class="tittle">PHP</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <img src="{{ asset('img/developer.jpg') }} " class="img-responsive margin" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-4"> 
-      <h3 class="tittle">Bootstrap</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <img src="{{ asset('img/developer.jpg') }} " class="img-responsive margin" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-4"> 
-      <h3 class="tittle">Web Resposive CSS</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <img src="{{ asset('img/developer.jpg') }} " class="img-responsive margin" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-4"> 
-      <h3 class="tittle">Color Picker</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <img src="{{ asset('img/developer.jpg') }} " class="img-responsive margin" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-4"> 
-      <h3 class="tittle">JQuery</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <img src="{{ asset('img/developer.jpg') }} " class="img-responsive margin" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-4"> 
-      <h3 class="tittle">Templates web responsive</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <img src="{{ asset('img/developer.jpg') }} " class="img-responsive margin" style="width:100%" alt="Image">
-    </div>
-  </div>
-  <div class="container-fluid bg-3 text-center">
-    <div class="col-sm-4">
-    </div>
-    <div class="col-sm-4">
-      <div class="hero-text">
-      <a href="{{route('login')}}"><button class="btn btn-success">Sign In</button></a>
-    </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- Footer -->
-<footer class="container-fluid bg-4 text-center">
-  <p>Developers Copyright 2017 |<a href="http://localhost:8000/welcome"> www.developers.com</a></p> 
-</footer>
-
-</body>
+    <footer class="mastfoot">
+        <p>ChatterBox <a href="https://twitter.com/daniel_dr7">@Dr7</a>.</p>
+    </footer>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script  src="js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="http://getbootstrap.com/assets/js/vendor/popper.min.js"></script>
+    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+  </body>
 </html>

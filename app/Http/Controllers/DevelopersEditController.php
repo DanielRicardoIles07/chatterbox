@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace chatterbox\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Developersmodel;
+use chatterbox\Developersmodel;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Requests\DevelopersFormRequest;
+use chatterbox\Http\Requests\DevelopersFormRequest;
 use DB;
 
 class DevelopersEditController extends Controller
