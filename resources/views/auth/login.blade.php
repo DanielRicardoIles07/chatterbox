@@ -61,17 +61,17 @@
                   </span>
           @endif
 
-          <div class="form-group">
-            <div class="input-group field{{ $errors->has('password') ? ' has-error' : '' }}">
-              <input type="password" class="form-control" id="uPassword" placeholder="Password">
-              <label for="uPassword" class="input-group-addon glyphicon glyphicon-lock"></label>
-            </div> 
-          </div>
-          @if ($errors->has('password'))
-                  <span class="help-block">
-                      <strong>{{ $errors->first('password') }}</strong>
+           <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+            <div class="input-group field {{ $errors->has('email') ? ' has-error' : '' }}">
+            <input id="password" type="password" class="form-control" name="password" required="" placeholder="Contraseña">
+            <label for="uLogin" class="input-group-addon glyphicon glyphicon-lock"></label>
+            </div>
+              @if ($errors->has('password'))
+                 <span class="help-block">
+                     <strong>{{ $errors->first('password') }}</strong>
                   </span>
-          @endif
+                     @endif
+            </div>         
           
       </div> 
 
