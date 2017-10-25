@@ -1,6 +1,6 @@
 <?php
 
-namespace chatterbox\Http\Middleware;
+namespace babblerchat\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;

@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => chatterbox\User::class,
+            'model' => babblerchat\User::class,
         ],
 
         // 'users' => [

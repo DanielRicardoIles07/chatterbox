@@ -1,6 +1,6 @@
 <?php
 
-namespace chatterbox\Http\Controllers;
+namespace babblerchat\Http\Controllers;
 
 use Illuminate\Http\Request;
 

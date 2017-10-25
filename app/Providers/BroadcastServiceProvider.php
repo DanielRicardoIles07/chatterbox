@@ -1,6 +1,6 @@
 <?php
 
-namespace chatterbox\Providers;
+namespace babblerchat\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Broadcast;

@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => chatterbox\User::class,
+        'model' => babblerchat\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],

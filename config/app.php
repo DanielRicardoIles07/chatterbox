@@ -171,11 +171,11 @@ return [
         /*
          * Application Service Providers...
          */
-        chatterbox\Providers\AppServiceProvider::class,
-        chatterbox\Providers\AuthServiceProvider::class,
-        // chatterbox\Providers\BroadcastServiceProvider::class,
-        chatterbox\Providers\EventServiceProvider::class,
-        chatterbox\Providers\RouteServiceProvider::class,
+        babblerchat\Providers\AppServiceProvider::class,
+        babblerchat\Providers\AuthServiceProvider::class,
+        // babblerchat\Providers\BroadcastServiceProvider::class,
+        babblerchat\Providers\EventServiceProvider::class,
+        babblerchat\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
 
     ],

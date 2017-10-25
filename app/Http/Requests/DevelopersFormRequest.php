@@ -1,6 +1,6 @@
 <?php
 
-namespace chatterbox\Http\Requests;
+namespace babblerchat\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

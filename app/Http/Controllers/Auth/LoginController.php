@@ -1,8 +1,8 @@
 <?php
 
-namespace chatterbox\Http\Controllers\Auth;
+namespace babblerchat\Http\Controllers\Auth;
 
-use chatterbox\Http\Controllers\Controller;
+use babblerchat\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller

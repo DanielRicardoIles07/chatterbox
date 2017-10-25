@@ -1,6 +1,6 @@
 <?php
 
-namespace chatterbox\Exceptions;
+namespace babblerchat\Exceptions;
 
 use Exception;
 use Illuminate\Auth\AuthenticationException;

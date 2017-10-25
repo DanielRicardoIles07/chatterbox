@@ -1,6 +1,6 @@
 <?php
 
-namespace chatterbox\Http\Middleware;
+namespace babblerchat\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as BaseEncrypter;
 

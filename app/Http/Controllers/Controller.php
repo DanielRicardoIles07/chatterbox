@@ -1,6 +1,6 @@
 <?php
 
-namespace chatterbox\Http\Controllers;
+namespace babblerchat\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
