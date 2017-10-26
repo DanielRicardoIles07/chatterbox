@@ -1,107 +1,139 @@
-
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=500, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="{!! asset('css/login.css') !!}">
-    <title>ChatterBox</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!-- Custom styles for this template -->
-    <link href="http://getbootstrap.com/docs/4.0/examples/cover/cover.css" rel="stylesheet">
-  </head>
-  <style type="text/css">
-    body{
+@extends('auth.layout')
+@section('title')
+  Babbling
+@endsection
+@section('body')
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond');
+  body{
       background-image: url("{!! asset('img/wp5.jpg') !!}");
     }
-  </style>
-  <body>
+    #appname{
+      font-family: 'EB Garamond', serif;
+      font-size: 25px;
+      color: white;
+    }
+    a:active {
+    background-color: white;
+}
+footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
 
-    <div class="site-wrapper">
-      <div class="site-wrapper-inner">
-        <div class="cover-container">
-          <header class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand">ChatterBox</h3>
-              <nav class="nav nav-masthead">
-                <a class="nav-link active" href="{{ url('/welcome') }}">Ingresar</a>
-                <a class="nav-link" href="{{ route('register') }}">Registrame</a>
-              </nav>
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond');
+</style>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="{{route('login')}}" id="appname">Babbling</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a  href="#">Registrarme</a></li>
+        <li><a href="#">Iniciar Sesion</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container text-center">    
+  <div class="row">
+    <div class="col-sm-3"> 
+    </div>
+
+    <div class="col-sm-7">
+      <div class="row">
+        <div class="col-sm-12">
+        </div>
+      </div>  
+    </div>
+    <div class="col-sm-3"> 
+    </div>
+    <div class="col-sm-7">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="panel panel-default text-left">
+            <div class="panel-body">
+            <center><h3>Registrarme</h3></center>
+                   <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+                        {{ csrf_field() }}
+
+                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                            <label for="name" class="col-md-4 control-label">Name</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+
+                                @if ($errors->has('name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <label for="password" class="col-md-4 control-label">Password</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control" name="password" required>
+
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Register
+                                </button>
+                            </div>
+                        </div>
+                    </form>
             </div>
-          </header>
           </div>
-          <div class="col-sm-4"></div>
-          
-          <div class="col-sm-4">
-            <div class="content-fluid">
-
-      <div class="modal-header">
-        <h4>Bienvenido</h4>
-      </div> 
-
-      <div class="modal-body">
-         <form class="new_user" id="new_user" role="form" method="POST" action="{{ route('login') }}">
-            {{ csrf_field() }}
-
-          <div class="form-group">
-            <div class="input-group field {{ $errors->has('email') ? ' has-error' : '' }}">
-              <input autofocus="" type="email" class="form-control" id="email" placeholder="Correo Electronico" name="email" required="">
-              <label for="uLogin" class="input-group-addon glyphicon glyphicon-envelope"></label>
-            </div>
-          </div> 
-          @if ($errors->has('email'))
-                  <span class="help-block">
-                      <strong>{{ $errors->first('email') }}</strong>
-                  </span>
-          @endif
-
-           <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-            <div class="input-group field {{ $errors->has('email') ? ' has-error' : '' }}">
-            <input id="password" type="password" class="form-control" name="password" required="" placeholder="Contraseña">
-            <label for="uLogin" class="input-group-addon glyphicon glyphicon-lock"></label>
-            </div>
-              @if ($errors->has('password'))
-                 <span class="help-block">
-                     <strong>{{ $errors->first('password') }}</strong>
-                  </span>
-                     @endif
-            </div>         
-          
-      </div> 
-
-      <div class="modal-footer">
-        <label>
-        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Recordarme
-        </label>
-        <div class="col-sm-4"></div>
-        <div class="col-sm-4"><button type="submit" class="btn btn-default">Ingresar</button></div>
-      </div>
-      <div>
-      <a class="btn-default" href="{{ route('password.request') }}">
-        ¿Olvidaste Tu contraseña?
-      </a>
-      </div>
-      <br>
-    </form>
-          </div>
-          <div class="col-sm-4"></div>
         </div>
       </div>
     </div>
-    <footer class="mastfoot">
-        <p>ChatterBox <a href="https://twitter.com/daniel_dr7">@Dr7</a>.</p>
-    </footer>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script  src="js/index.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="http://getbootstrap.com/assets/js/vendor/popper.min.js"></script>
-    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-  </body>
-</html>
+  </div>
+</div>
+
+<div class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class="container">
+      <p class="navbar-text pull-left">© 2017 - Build By <a href="https://www.facebook.com/danielricardo.iles" target="_blank" >@Dr7</a>
+      </p>
+    </div>
+</div>
+@endsection
