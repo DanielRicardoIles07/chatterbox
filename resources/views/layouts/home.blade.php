@@ -65,14 +65,22 @@
         <a class="mb" data-toggle="modal" href="#msgModal">Mensajes</a>
       </li>
       <li class="md">
-        <a class="mb" href="docs/index.html">Lanzamientos</a>
+        <a class="mb" href="#">Lanzamientos</a>
       </li>
 
       <li class="md">
-        <a class="mb" href="notifications/index.html">Notificaciones</a>
+        <a class="mb" href="#">Notificaciones</a>
       </li>
       <li class="md se">
-        <a class="mb" href="login/index.html">Logout</a>
+        <a class="mb" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
       </li>
 
     </ul>
