@@ -99,15 +99,11 @@
 
     <ul class="nav navbar-nav ro" id="js-popoverContent">
       <li class="md"><a class="mb" href="#" data-action="growl">{{Auth::user()->name}}</a></li>
-      <li class="md"><a class="mb" href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form></li>
+      <li class="md"><a class="mb" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+          {{ csrf_field() }}
+        </form>
+      </li>
     </ul>
   </div>
 </nav>
