@@ -41,15 +41,16 @@
 
       <div class="modal-header">
         <h4>Registrate</h4>
-      </div> 
 
+      </div> 
       <div class="modal-body">
+
          <form class="new_user" id="new_user" role="form" method="POST" action="{{ route('register') }}">
                 {{ csrf_field() }}
             <!--nombres-->
           <div class="form-group">
             <div class="input-group field{{ $errors->has('name') ? ' has-error' : '' }}">
-              <input autofocus="autofocus" class="form-control" placeholder="Nombres" type="text" required="" name="name" id="name">
+              <input autofocus="autofocus" class="form-control" placeholder="Nombres y apellidos*" type="text" required="" name="name" id="name">
               <label for="uLogin" class="input-group-addon glyphicon glyphicon-user"></label>
             </div>
           </div> 
@@ -61,7 +62,7 @@
         <!--correo  -->
         <div class="form-group">
             <div class="input-group field{{ $errors->has('email') ? ' has-error' : '' }}">
-              <input autofocus="autofocus" class="form-control" placeholder="correo Electronico" type="email" required="" name="email" id="name">
+              <input autofocus="autofocus" class="form-control" placeholder="Correo Electronico*" type="email" required="" name="email" id="name">
               <label for="uLogin" class="input-group-addon glyphicon glyphicon-envelope"></label>
             </div>
           </div> 
@@ -73,7 +74,7 @@
           <!--contraseña1  -->
           <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
             <div class="input-group">
-              <input id="password" type="password" class="form-control" name="password" required="" placeholder="Contraseña">
+              <input id="password" type="password" class="form-control" name="password" required="" placeholder="Contraseña*">
               <label for="uPassword" class="input-group-addon glyphicon glyphicon-lock"></label>
             </div>
               @if ($errors->has('password'))
@@ -85,7 +86,7 @@
           <!--contraseña2  -->
           <div class="form-group">
             <div class="input-group">
-              <input placeholder="Confirmar Contraseña" class="form-control" id="password-confirm" type="password" name="password_confirmation" required>
+              <input placeholder="Confirmar Contraseña*" class="form-control" id="password-confirm" type="password" name="password_confirmation" required>
               <label for="uPassword" class="input-group-addon glyphicon glyphicon-lock"></label>
             </div> 
           </div>

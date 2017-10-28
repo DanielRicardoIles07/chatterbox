@@ -32,6 +32,25 @@
         padding: 10px;
         margin-bottom: 20px;
       }
+      .btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
     </style>
 
   </head>
@@ -79,7 +98,7 @@
       </ul>
 
       <ul class="nav navbar-nav ro" id="js-popoverContent">
-        <li class="md"><a class="mb" href="#" data-action="growl">Perfil</a></li>
+        <li class="md"><a class="mb" href="#" data-action="growl">Cuenta</a></li>
         <li class="md">
               <a class="mb" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                Cerrar Sesion
@@ -111,20 +130,20 @@
             <a class="bjx" href="profile/index.html">{{Auth::user()->name}}</a>
           </h6>
 
-          <p class="abk">I wish i was a little bit taller, wish i was a baller, wish i had a girl… also.</p>
+          <p class="abk"><b style="color: #3097d1">Tu informacion</b><br><a href="" style="color: red; text-decoration: none;">No hay informacion para mostrar</a></p>
 
           <ul class="blh">
             <li class="bli">
               <a href="#userModal" class="bjx" data-toggle="modal">
-                Friends
-                <h6 class="aal">12M</h6>
+                Babblers
+                <h6 class="aal">0</h6>
               </a>
             </li>
 
             <li class="bli">
               <a href="#userModal" class="bjx" data-toggle="modal">
-                Enemies
-                <h6 class="aal">1</h6>
+                Lanzados
+                <h6 class="aal">0</h6>
               </a>
             </li>
           </ul>
@@ -133,13 +152,12 @@
 
       <div class="mu sh sp abk">
         <div class="mv">
-          <h6 class="abd">About <small>· <a href="#">Edit</a></small></h6>
+          <h6 class="abd">Sobre mi <small>· <a href="#" style="color: red">Vacio</a></small></h6>
           <ul class="dc atd">
-            <li><span class="asz h awk abc"></span>Went to <a href="#">Oh, Canada</a>
-            <li><span class="asz h biz abc"></span>Became friends with <a href="#">Obama</a>
-            <li><span class="asz h bax abc"></span>Worked at <a href="#">Github</a>
-            <li><span class="asz h bbn abc"></span>Lives in <a href="#">San Francisco, CA</a>
-            <li><span class="asz h bcw abc"></span>From <a href="#">Seattle, WA</a>
+            <li><span class="asz h awk abc"></span>Estudio en <a href="#" style="color: red">Vacio</a>
+            <li><span class="asz h bax abc"></span>Trabajo en <a href="#" style="color: red">Vacio</a>
+            <li><span class="asz h bbn abc"></span>Vivo en <a href="#" style="color: red">Vacio</a>
+            <li><span class="asz h bcw abc"></span>Soy de <a href="#" style="color: red">Vacio</a>
           </ul>
         </div>
       </div>
@@ -151,12 +169,7 @@
 
         <li class="oq b acx">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Message">
-            <div class="jq">
-              <button type="button" class="cg kt uo">
-                <span class="h awl"></span>
-              </button>
-            </div>
+             <h1>Hola <l style="color: #3097d1">{{Auth::user()->name}}!</h1>
           </div>
         </li>
 
@@ -166,10 +179,37 @@
             src="{{asset ('img/lognavbar.png')}}">
           <div class="or">
             <div class="bky">
-              <h6>{{Auth::user()->name}}</h6>
+              <h6>Ya eres un babbler...</h6>
             </div>
             <p>
-              Es un placer para mi que estes aqui, permiteme decirte que aun te falta informacion que quizas desees compartir con los demas babblers
+              Es un placer para mi que estes aqui, permiteme decirte que aun te falta informacion que quizas desees compartir con los demas babblers.
+            </p>
+          </div>
+        </li>
+      </ul>
+      <ul class="ca bkt bku abk">
+
+        <li class="oq b acx">
+          <div class="input-group">
+             <h3>Completa tu perfil.</h3>
+          </div>
+        </li>
+
+        <li class="oq b acx">
+          <img
+            class="bkp ru uk abc"
+            src="{{asset ('img/lognavbar.png')}}">
+          <div class="or">
+            <div class="bky">
+              <h6><b>Foto de perfil</b>
+              <button type="button" class="cg kt uo">
+                <span class="h awl"></span>
+                <input type="file" name="">
+              </button>
+              </h6>
+            </div>
+            <p>
+              Elige tu foto de perfil, sera publica para tus babblers.
             </p>
           </div>
         </li>
