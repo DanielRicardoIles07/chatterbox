@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=500, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
     <link rel="stylesheet" type="text/css" href="{!! asset('css/login.css') !!}">
-    <title>ChatterBox</title>
-
+    <title>Babbler</title>
+    <link rel="icon" type="img/png" href="{{ asset ('img/log2.png')}}">
     <!-- Bootstrap core CSS -->
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -28,10 +27,9 @@
         <div class="cover-container">
           <header class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand">ChatterBox</h3>
               <nav class="nav nav-masthead">
-                <a class="nav-link " href="{{ url('/') }}">Ingresar</a>
-                <a class="nav-link active" href="{{ route('register') }}">Registrame</a>
+                <a class="nav-link " href="{{ url('/welcome') }}">Iniciar Sesion</a>
+                <a class="nav-link active" href="{{ route('register') }}">Registrarme</a>
               </nav>
             </div>
           </header>

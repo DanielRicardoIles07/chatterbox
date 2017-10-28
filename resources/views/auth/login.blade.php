@@ -8,7 +8,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <from method="POST" action="{{ route('login') }}">
+        <form method="POST" action="{{ route('login') }}">
         {{ csrf_field() }}
             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                 <label for="email"  style="color:black">Correo Electronico</label>
