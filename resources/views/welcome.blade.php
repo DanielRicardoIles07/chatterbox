@@ -11,10 +11,10 @@ Babbler
         color: black;
       }
       #registrar{
-        color: rgb(0, 185, 254);
+        color: black; 
       }
       #registrar:hover{
-        color: black;
+        color: rgb(0, 185, 254);
       }
       #visit-me{
         color: black;
