@@ -18,7 +18,7 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('developers/completeprofile', 'DevelopersEditController');
+Route::resource('babblers/complete/information', 'DevelopersEditController');
 Route::resource('developers/', 'DevelopersController');
 
 

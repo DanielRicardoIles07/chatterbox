@@ -16,7 +16,7 @@ class DevelopersEditController extends Controller
     }
     //
     public function index(){
-        return view('developers/edit_profile');
+        return view('babblers/complete_information');
     }
     public function store(DevelopersFormRequest $request){
     	$developer= new Developersmodel();

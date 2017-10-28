@@ -14,7 +14,7 @@ Babbler
         color: black; 
       }
       #registrar:hover{
-        color: rgb(0, 185, 254);
+        color: #3097d1;
       }
       #visit-me{
         color: black;
@@ -36,7 +36,7 @@ Babbler
           </header>
 
           <main role="main" class="inner cover">
-            <h1 class="cover-heading"><l style="color:black">Bab</l><l style="color:rgb(0, 185, 254);">bler</l></li></h1>
+            <h1 class="cover-heading"><l style="color:black">Bab</l><l style="color:#3097d1;">bler</l></li></h1>
             <p class="lead" style="color:black">Babbler es un chat web.</p>
             <p class="lead">
               <a href="" data-target="#modal-login" data-toggle="modal" class="btn btn-lg btn-dark"> Iniciar Sesion</a>
