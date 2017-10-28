@@ -34,41 +34,42 @@
   @yield('body')
   <nav class="ck mo zq mt qh app-navbar">
 
-  <a class="e" href="index.html">
-    <img src="https://bootstrap-themes.github.io/application/assets/img/brand-white.png" alt="brand">
-  </a>
+  <button class="cg bll blm bkf" >
+            <img class="rl" src="{{asset ('img/log4.png')}}" alt="Babbler">
+          </button>
 
   <button
-    class="mk blk se"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarResponsive"
-    aria-controls="navbarResponsive"
-    aria-expanded="false"
-    aria-label="Toggle navigation">
-    <span class="ml"></span>
-  </button>
+          class="mk blk se"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="NBFIDSBGDISB">
+      <span role="button" tabindex="0" 
+       aria-pressed="false" onclick="handleBtnClick(event)" 
+       onKeyPress="handleBtnKeyPress(event)">
+        <b style="color: white">Menu
+        </b></span>
+    </button>
 
   <div class="collapse f" id="navbarResponsive">
     <ul class="navbar-nav adn">
       <li class="md active">
-        <a class="mb" href="index.html">Home <span class="zt">(current)</span></a>
+        <a class="mb" href="index.html">Inicio <span class="zt">(current)</span></a>
       </li>
       <li class="md">
-        <a class="mb" href="profile/index.html">Profile</a>
+        <a class="mb" href="">Babblers</a>
       </li>
       <li class="md">
-        <a class="mb" data-toggle="modal" href="#msgModal">Messages</a>
+        <a class="mb" data-toggle="modal" href="#msgModal">Mensajes</a>
       </li>
       <li class="md">
-        <a class="mb" href="docs/index.html">Docs</a>
+        <a class="mb" href="docs/index.html">Lanzamientos</a>
       </li>
 
-      <li class="md se">
-        <a class="mb" href="notifications/index.html">Notifications</a>
-      </li>
-      <li class="md se">
-        <a class="mb" data-action="growl">Growl</a>
+      <li class="md">
+        <a class="mb" href="notifications/index.html">Notificaciones</a>
       </li>
       <li class="md se">
         <a class="mb" href="login/index.html">Logout</a>
@@ -81,20 +82,15 @@
     </form>
 
     <ul id="#js-popoverContent" class="nav navbar-nav zc aah ro sk">
-      <li class="md">
-        <a class="g mb" href="notifications/index.html">
-          <span class="h avv"></span>
-        </a>
-      </li>
       <li class="md aax">
         <button class="cg bll blm bkf" data-toggle="popover">
-          <img class="rl" src="assets/img/avatar-dhg.png">
+          <img class="rl" src="{{asset ('img/lognavbar.png')}}">
         </button>
       </li>
     </ul>
 
     <ul class="nav navbar-nav ro" id="js-popoverContent">
-      <li class="md"><a class="mb" href="#" data-action="growl">Growl</a></li>
+      <li class="md"><a class="mb" href="#" data-action="growl">{{Auth::user()->name}}</a></li>
       <li class="md"><a class="mb" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
