@@ -26,33 +26,28 @@
         *width: 100%;
       }
       #completaralert{
-        background-color: red;
+        background-color: #ff0505;
         color: white;
         border-radius: 10px;
         padding: 10px;
         margin-bottom: 20px;
       }
-      .btn-file {
-    position: relative;
-    overflow: hidden;
-}
-.btn-file input[type=file] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    font-size: 100px;
-    text-align: right;
-    filter: alpha(opacity=0);
-    opacity: 0;
-    outline: none;
-    background: white;
-    cursor: inherit;
-    display: block;
+      
+
+.omitir{
+  color: #fff;
+    background-color: #3097d1;
+    border-color: #4cae4c;
+    padding: 6px 12px;
+    font-size: 14px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+
 }
     </style>
-
+<style>#botones-para-compartir{ text-align:center;}.likedino:hover, .facebooko:hover, .twittero:hover, .googleo:hover,.pinteresto:hover {-webkit-transform: rotate(360deg);-moz-transform: rotate(360deg);transform: rotate(360deg);transition:all .3s ease-out;-moz-transition: all .5s;-webkit-transition: all .5s;-o-transition: all .5s;}.likedino, .facebooko, .twittero, .googleo, .pinteresto {transition:all .3s ease-out;-moz-transition: all .5s;-webkit-transition: all .5s;-o-transition: all .5s;margin-left:10px; /* espacio entre cada boton */}</style>
+          </ul>
   </head>
 
 
@@ -130,23 +125,7 @@
             <a class="bjx" href="profile/index.html">{{Auth::user()->name}}</a>
           </h6>
 
-          <p class="abk"><b style="color: #3097d1">Tu informacion</b><br><a href="" style="color: red; text-decoration: none;">No hay informacion para mostrar</a></p>
-
-          <ul class="blh">
-            <li class="bli">
-              <a href="#userModal" class="bjx" data-toggle="modal">
-                Babblers
-                <h6 class="aal">0</h6>
-              </a>
-            </li>
-
-            <li class="bli">
-              <a href="#userModal" class="bjx" data-toggle="modal">
-                Lanzados
-                <h6 class="aal">0</h6>
-              </a>
-            </li>
-          </ul>
+          <p class="abk"><b style="color: #3097d1">Informacion Adicional</b><br><a href="" style="color: red; text-decoration: none;">No hay informacion para mostrar</a></p>
         </div>
       </div>
 
@@ -179,7 +158,9 @@
             src="{{asset ('img/lognavbar.png')}}">
           <div class="or">
             <div class="bky">
-              <h6>Ya eres un babbler...</h6>
+              <h6>
+                <p>Ya eres un babbler! <l style="color: #00b300">!Felicidades¡</l></p>
+              </h6>
             </div>
             <p>
               Es un placer para mi que estes aqui, permiteme decirte que aun te falta informacion que quizas desees compartir con los demas babblers.
@@ -187,12 +168,15 @@
           </div>
         </li>
       </ul>
+
       <ul class="ca bkt bku abk">
 
         <li class="oq b acx">
           <div class="input-group">
              <h3>Completa tu perfil.</h3>
+
           </div>
+            <a href="{{url('/home')}}"><button class="omitir">Omitir</button></a>
         </li>
 
         <li class="oq b acx">
@@ -201,22 +185,146 @@
             src="{{asset ('img/lognavbar.png')}}">
           <div class="or">
             <div class="bky">
-              <h6><b>Foto de perfil</b>
-              <button type="button" class="cg kt uo">
-                <span class="h awl"></span>
-                <input type="file" name="">
-              </button>
-              </h6>
-            </div>
+              <b>Foto de perfil</b> <br>
+              <span class="btn btn-default btn-file">
+               <input type="file" class="form-control">
+              </span>
+            </div><hr>
             <p>
-              Elige tu foto de perfil, sera publica para tus babblers.
+              * Tu foto de portada es importante, sera visible para tus babblers.
             </p>
+          </div>
+        </li>
+        <li class="oq b acx">
+          <img
+            class="bkp ru uk abc"
+            src="{{asset ('img/lognavbar.png')}}">
+          <div class="or">
+            <div class="bky">
+              <b>Foto de Portada</b> <br>
+              <span class="btn btn-default btn-file">
+               <input type="file" class="form-control">
+              </span>
+            </div><hr>
+            <p>
+              * Tu foto de perfil es importante, sera visible para tus babblers.
+            </p>
+          </div>
+        </li>
+        <li class="oq b acx">
+          <img
+            class="bkp ru uk abc"
+            src="{{asset ('img/lognavbar.png')}}">
+          <div class="or">
+            <div class="bky">
+              <b>Nombres</b><br>
+              <input type="text" class="form-control" placeholder="Nombres y apellidos" name="" required="">
+            </div><hr>
+            <p>
+              * Tus nombres y apellidos son muy importantes.
+            </p>
+          </div>
+        </li>
+        <li class="oq b acx">
+          <img
+            class="bkp ru uk abc"
+            src="{{asset ('img/lognavbar.png')}}">
+          <div class="or">
+            <div class="bky">
+              <b>Informacion Adicional</b><br>
+              <input type="text" class="form-control" placeholder="Informacion Adicional (Ej. soy Junbbler y soy muy divertido)" name="" required="">
+            </div><hr>
+            <p>
+              * Añade informacion que consideres importante para ti y desees compartir con tus babblers.
+            </p>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="ca bkt bku abk">
+        <li class="oq b acx">
+          <div class="input-group">
+             <h3>Sobre ti</h3>
+          </div>
+        </li>
+        <li class="oq b acx">
+          <img
+            class="bkp ru uk abc"
+            src="{{asset ('img/lognavbar.png')}}">
+          <div class="or">
+            <div class="bky">
+              <b>Donde estudias</b><br>
+              <input type="text" class="form-control" placeholder="Nombre de tu lugar educativo..." name="" >
+              <hr>
+              <span class="asz h bcw abc"><b>Direccion</b></span><br>
+              <input type="text" class="form-control" placeholder="Direccion de tu lugar educativo..." name="" >
+            </div>
+          </div>
+        </li>
+        <li class="oq b acx">
+          <img
+            class="bkp ru uk abc"
+            src="{{asset ('img/lognavbar.png')}}">
+          <div class="or">
+            <div class="bky">
+              <b>Donde Trabajas</b><br>
+              <input type="text" class="form-control" placeholder="Nombre de tu lugar de trabajo..." name="" >
+              <hr>
+              <span class="asz h bcw abc"><b>Direccion</b></span><br>
+              <input type="text" class="form-control" placeholder="Direccion de tu lugar de trabajo..." name="" >
+            </div>
+          </div>
+        </li>
+        <li class="oq b acx">
+          <img
+            class="bkp ru uk abc"
+            src="{{asset ('img/lognavbar.png')}}">
+          <div class="or">
+            <div class="bky">
+              <b>Donde vives</b><br>
+              <input type="text" class="form-control" placeholder="Nombre lugar donde vives" name="" >
+              <hr>
+              <span class="asz h bbn abc"><b>Direccion</b></span><br>
+              <input type="text" class="form-control" placeholder="Direccion lugar donde vives..." name="" >
+            </div>
+          </div>
+        </li>
+        <li class="oq b acx">
+          <img
+            class="bkp ru uk abc"
+            src="{{asset ('img/lognavbar.png')}}">
+          <div class="or">
+            <div class="bky">
+              <b>De donde eres</b><br>
+              <input type="text" class="form-control" placeholder="Nombre de tu lugar de origen..." name="" >
+              <hr> 
+              <span class="asz h bcw abc"><b>Direccion</b></span><br>
+              <input type="text" class="form-control" placeholder="Direccion de tu lugar de origen..." name="" >
+            </div>
           </div>
         </li>
       </ul>
     </div>
   </div>
 </div>
+<div class="mu blj">
+        <div class="mv">
+          © 2018 Bootstrap
+          <a href="#">About</a>
+          <a href="#">Help</a>
+          <a href="#">Terms</a>
+          <a href="#">Privacy</a>
+          <a href="#">Cookies</a>
+          <a href="#">Ads </a>
+          <a href="#">Info</a>
+          <a href="#">Brand</a>
+          <a href="#">Blog</a>
+          <a href="#">Status</a>
+          <a href="#">Apps</a>
+          <a href="#">Jobs</a>
+          <a href="#">Advertise</a>
+        </div>
+      </div>
     <script src="https://bootstrap-themes.github.io/application/assets/js/jquery.min.js"></script>
     <script src="https://bootstrap-themes.github.io/application/assets/js/popper.min.js"></script>
     <script src="https://bootstrap-themes.github.io/application/assets/js/chart.js"></script>
