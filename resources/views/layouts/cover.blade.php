@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="">
     <title>@yield('title')</title>
-    <link rel="icon" type="img/png" href="{{ asset ('img/log1.png')}}">
+    <link rel="icon" type="img/png" href="{{ asset ('img/log2.png')}}">
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://getbootstrap.com/docs/4.0/examples/cover/cover.css" rel="stylesheet">
   </head>

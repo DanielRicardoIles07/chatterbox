@@ -5,7 +5,19 @@ Babbler
 @section('body')
 <style type="text/css">
       body{
-        background: url({{ asset ('img/wp5.jpg')}});
+        background-image: url({{ asset ('img/wp9.jpg')}});
+      }
+      #iniciar{
+        color: black;
+      }
+      #registrar{
+        color: rgb(0, 185, 254);
+      }
+      #registrar:hover{
+        color: black;
+      }
+      #visit-me{
+        color: black;
       }
     </style>
     <div class="site-wrapper">
@@ -17,24 +29,24 @@ Babbler
           <header class="masthead clearfix">
             <div class="inner">
               <nav class="nav nav-masthead">
-                <a class="nav-link active" href="{{url('/')}}">Iniciar Sesion</a>
-                <a class="nav-link" href="{{route('register')}}">Registrarme</a>
+                <a class="nav-link btn-lg active" id="iniciar" href="{{url('/')}}" >Iniciar Sesion</a>
+                <a class="nav-link btn-lg" id="registrar" href="{{route('register')}}">Registrarme</a>
               </nav>
             </div>
           </header>
 
           <main role="main" class="inner cover">
-            <h1 class="cover-heading"><l>Bab</l><l style="color:rgb(0, 185, 254);">bler</l></li></h1>
-            <p class="lead">Babbler es un chat web.</p>
+            <h1 class="cover-heading"><l style="color:black">Bab</l><l style="color:rgb(0, 185, 254);">bler</l></li></h1>
+            <p class="lead" style="color:black">Babbler es un chat web.</p>
             <p class="lead">
-              <a href="" data-target="#modal-login" data-toggle="modal" class="btn btn-lg btn-secondary">Iniciar Sesion</a>
+              <a href="" data-target="#modal-login" data-toggle="modal" class="btn btn-lg btn-dark"> Iniciar Sesion</a>
             </p>
           </main>
 
           <footer class="mastfoot">
             <div class="inner">
-              <p>
-              Visitame para mas <a href="https://www.facebook.com/danielricardo.iles"> Dr7</a>.
+              <p id="visit-me">
+              Visitame<a href="https://www.facebook.com/danielricardo.iles" target="_blank"> Dr7</a>.
             </p>
             </div>
           </footer>

@@ -2,7 +2,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <h5 class="modal-title" id="exampleModalLabel"><img src="{{asset ('img/loglogin.png')}}"><l style="color:black">Bab</l><l style="color:rgb(0, 185, 254);">bler</l></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -14,7 +14,6 @@
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
-                            <div class="col-md-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))
@@ -22,13 +21,13 @@
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
-                            </div>
+                            
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
 
-                            <div class="col-md-6">
+                           
                                 <input id="password" type="password" class="form-control" name="password" required>
 
                                 @if ($errors->has('password'))
@@ -36,7 +35,7 @@
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
-                            </div>
+                         
                         </div>
 
                         <div class="form-group">

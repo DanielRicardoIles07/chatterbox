@@ -18,7 +18,7 @@
   </head>
   <style type="text/css">
     body{
-      background-image: url("{!! asset('img/wp2.jpg') !!}");
+      background-image: url("{!! asset('img/wp7.png') !!}");
     }
   </style>
   <body>
@@ -30,7 +30,7 @@
             <div class="inner">
               <h3 class="masthead-brand">ChatterBox</h3>
               <nav class="nav nav-masthead">
-                <a class="nav-link " href="{{ route('login') }}">Ingresar</a>
+                <a class="nav-link " href="{{ url('/') }}">Ingresar</a>
                 <a class="nav-link active" href="{{ route('register') }}">Registrame</a>
               </nav>
             </div>
