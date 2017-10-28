@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Developersmodel extends Model
 {
-    protected $conection= 'developers';
+    protected $conection= 'babbler';
     protected $table='users';
     protected $primaryKey = 'id';
     public $timesstamps = false;

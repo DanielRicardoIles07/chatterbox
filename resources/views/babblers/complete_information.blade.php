@@ -168,142 +168,144 @@
           </div>
         </li>
       </ul>
+      {!! Form::open(array('url'=> 'babblers/complete/information', 'method'=>'POST','autocomplete'=> 'off','files'=>'true')) !!}
+        {{Form::token()}}
+        <ul class="ca bkt bku abk">
 
-      <ul class="ca bkt bku abk">
+          <li class="oq b acx">
+            <div class="input-group">
+               <h3>Completa tu perfil.</h3>
 
-        <li class="oq b acx">
-          <div class="input-group">
-             <h3>Completa tu perfil.</h3>
-
-          </div>
-            <a href="{{url('/home')}}"><button class="omitir">Omitir</button></a>
-        </li>
-
-        <li class="oq b acx">
-          <img
-            class="bkp ru uk abc"
-            src="{{asset ('img/lognavbar.png')}}">
-          <div class="or">
-            <div class="bky">
-              <b>Foto de perfil</b> <br>
-              <span class="btn btn-default btn-file">
-               <input type="file" class="form-control">
-              </span>
-            </div><hr>
-            <p>
-              * Tu foto de portada es importante, sera visible para tus babblers.
-            </p>
-          </div>
-        </li>
-        <li class="oq b acx">
-          <img
-            class="bkp ru uk abc"
-            src="{{asset ('img/lognavbar.png')}}">
-          <div class="or">
-            <div class="bky">
-              <b>Foto de Portada</b> <br>
-              <span class="btn btn-default btn-file">
-               <input type="file" class="form-control">
-              </span>
-            </div><hr>
-            <p>
-              * Tu foto de perfil es importante, sera visible para tus babblers.
-            </p>
-          </div>
-        </li>
-        <li class="oq b acx">
-          <img
-            class="bkp ru uk abc"
-            src="{{asset ('img/lognavbar.png')}}">
-          <div class="or">
-            <div class="bky">
-              <b>Nombres</b><br>
-              <input type="text" class="form-control" placeholder="Nombres y apellidos" name="" required="">
-            </div><hr>
-            <p>
-              * Tus nombres y apellidos son muy importantes.
-            </p>
-          </div>
-        </li>
-        <li class="oq b acx">
-          <img
-            class="bkp ru uk abc"
-            src="{{asset ('img/lognavbar.png')}}">
-          <div class="or">
-            <div class="bky">
-              <b>Informacion Adicional</b><br>
-              <input type="text" class="form-control" placeholder="Informacion Adicional (Ej. soy Junbbler y soy muy divertido)" name="" required="">
-            </div><hr>
-            <p>
-              * Añade informacion que consideres importante para ti y desees compartir con tus babblers.
-            </p>
-          </div>
-        </li>
-      </ul>
-
-      <ul class="ca bkt bku abk">
-        <li class="oq b acx">
-          <div class="input-group">
-             <h3>Sobre ti</h3>
-          </div>
-        </li>
-        <li class="oq b acx">
-          <img
-            class="bkp ru uk abc"
-            src="{{asset ('img/lognavbar.png')}}">
-          <div class="or">
-            <div class="bky">
-              <b>Donde estudias</b><br>
-              <input type="text" class="form-control" placeholder="Nombre de tu lugar educativo..." name="" >
-              <hr>
-              <span class="asz h bcw abc"><b>Direccion</b></span><br>
-              <input type="text" class="form-control" placeholder="Direccion de tu lugar educativo..." name="" >
             </div>
-          </div>
-        </li>
-        <li class="oq b acx">
-          <img
-            class="bkp ru uk abc"
-            src="{{asset ('img/lognavbar.png')}}">
-          <div class="or">
-            <div class="bky">
-              <b>Donde Trabajas</b><br>
-              <input type="text" class="form-control" placeholder="Nombre de tu lugar de trabajo..." name="" >
-              <hr>
-              <span class="asz h bcw abc"><b>Direccion</b></span><br>
-              <input type="text" class="form-control" placeholder="Direccion de tu lugar de trabajo..." name="" >
+              <a href="{{url('/home')}}"><button class="omitir">Omitir</button></a>
+          </li>
+          <li class="oq b acx">
+            <img
+              class="bkp ru uk abc"
+              src="{{asset ('img/lognavbar.png')}}">
+            <div class="or">
+              <div class="bky">
+                <b>Foto de perfil</b> <br>
+                <span class="btn btn-default btn-file">
+                 <input type="file" class="form-control" name="perfil">
+                </span>
+              </div><hr>
+              <p>
+                * Tu foto de portada es importante, sera visible para tus babblers.
+              </p>
             </div>
-          </div>
-        </li>
-        <li class="oq b acx">
-          <img
-            class="bkp ru uk abc"
-            src="{{asset ('img/lognavbar.png')}}">
-          <div class="or">
-            <div class="bky">
-              <b>Donde vives</b><br>
-              <input type="text" class="form-control" placeholder="Nombre lugar donde vives" name="" >
-              <hr>
-              <span class="asz h bbn abc"><b>Direccion</b></span><br>
-              <input type="text" class="form-control" placeholder="Direccion lugar donde vives..." name="" >
+          </li>
+          <li class="oq b acx">
+            <img
+              class="bkp ru uk abc"
+              src="{{asset ('img/lognavbar.png')}}">
+            <div class="or">
+              <div class="bky">
+                <b>Foto de Portada</b> <br>
+                <span class="btn btn-default btn-file">
+                 <input type="file" class="form-control" name="portada">
+                </span>
+              </div><hr>
+              <p>
+                * Tu foto de perfil es importante, sera visible para tus babblers.
+              </p>
             </div>
-          </div>
-        </li>
-        <li class="oq b acx">
-          <img
-            class="bkp ru uk abc"
-            src="{{asset ('img/lognavbar.png')}}">
-          <div class="or">
-            <div class="bky">
-              <b>De donde eres</b><br>
-              <input type="text" class="form-control" placeholder="Nombre de tu lugar de origen..." name="" >
-              <hr> 
-              <span class="asz h bcw abc"><b>Direccion</b></span><br>
-              <input type="text" class="form-control" placeholder="Direccion de tu lugar de origen..." name="" >
+          </li>
+          <li class="oq b acx">
+            <img
+              class="bkp ru uk abc"
+              src="{{asset ('img/lognavbar.png')}}">
+            <div class="or">
+              <div class="bky">
+                <b>Nombres</b><br>
+                <input type="text" class="form-control" placeholder="Nombres y apellidos" name="names" required="">
+              </div><hr>
+              <p>
+                * Tus nombres y apellidos son muy importantes.
+              </p>
             </div>
-          </div>
-        </li>
-      </ul>
+          </li>
+          <li class="oq b acx">
+            <img
+              class="bkp ru uk abc"
+              src="{{asset ('img/lognavbar.png')}}">
+            <div class="or">
+              <div class="bky">
+                <b>Informacion Adicional</b><br>
+                <input type="text" class="form-control" placeholder="Informacion Adicional (Ej. soy Junbbler y soy muy divertido)" name="info_add">
+              </div><hr>
+              <p>
+                * Añade informacion que consideres importante para ti y desees compartir con tus babblers.
+              </p>
+            </div>
+          </li>
+        </ul>
+
+        <ul class="ca bkt bku abk">
+          <li class="oq b acx">
+            <div class="input-group">
+               <h3>Sobre ti</h3>
+            </div>
+          </li>
+          <li class="oq b acx">
+            <img
+              class="bkp ru uk abc"
+              src="{{asset ('img/lognavbar.png')}}">
+            <div class="or">
+              <div class="bky">
+                <b>Donde estudias</b><br>
+                <input type="text" class="form-control" placeholder="Nombre de tu lugar educativo..." name="study_at" >
+                <hr>
+                <span class="asz h bcw abc"><b>Direccion</b></span><br>
+                <input type="text" class="form-control" placeholder="Direccion de tu lugar educativo..." name="direction_study" >
+              </div>
+            </div>
+          </li>
+          <li class="oq b acx">
+            <img
+              class="bkp ru uk abc"
+              src="{{asset ('img/lognavbar.png')}}">
+            <div class="or">
+              <div class="bky">
+                <b>Donde Trabajas</b><br>
+                <input type="text" class="form-control" placeholder="Nombre de tu lugar de trabajo..." name="work_at" >
+                <hr>
+                <span class="asz h bcw abc"><b>Direccion</b></span><br>
+                <input type="text" class="form-control" placeholder="Direccion de tu lugar de trabajo..." name="direction_work" >
+              </div>
+            </div>
+          </li>
+          <li class="oq b acx">
+            <img
+              class="bkp ru uk abc"
+              src="{{asset ('img/lognavbar.png')}}">
+            <div class="or">
+              <div class="bky">
+                <b>Donde vives</b><br>
+                <input type="text" class="form-control" placeholder="Nombre lugar donde vives" name="live_at" >
+                <hr>
+                <span class="asz h bbn abc"><b>Direccion</b></span><br>
+                <input type="text" class="form-control" placeholder="Direccion lugar donde vives..." name="direction_live" >
+              </div>
+            </div>
+          </li>
+          <li class="oq b acx">
+            <img
+              class="bkp ru uk abc"
+              src="{{asset ('img/lognavbar.png')}}">
+            <div class="or">
+              <div class="bky">
+                <b>De donde eres</b><br>
+                <input type="text" class="form-control" placeholder="Nombre de tu lugar de origen..." name="from_at" >
+                <hr> 
+                <span class="asz h bcw abc"><b>Direccion</b></span><br>
+                <input type="text" class="form-control" placeholder="Direccion de tu lugar de origen..." name="direction_from" >
+              </div>
+            </div>
+          </li>
+          <button type="submit" class="omitir">Guardar</button>
+        </ul>
+      {!! Form::close() !!}
     </div>
   </div>
 </div>
