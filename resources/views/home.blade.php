@@ -3,6 +3,27 @@
 Babbler
 @endsection
 @section('body')
+<style type="text/css">
+  .btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+</style>
 <div class="cd fade" id="msgModal" tabindex="-1" role="dialog" aria-labelledby="bln" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -229,11 +250,10 @@ Babbler
   <div class="dp">
     <div class="fj">
       <div class="mu blf abk">
-        <div class="na" style="background-image: url({{asset('img/lognavbar.png')}});"></div>
+        <div class="na" style="background-image: url({{asset('img/lognavbar.png')}});" ></div>
         <div class="mv arx">
-          <a href="profile/index.html">
-            <img
-              class="blg"
+          <a >
+            <img class="blg" data-width="640" data-height="640" data-action="zoom"
               src="{{asset('img/lognavbar.png')}}">
           </a>
 
@@ -246,15 +266,15 @@ Babbler
           <ul class="blh">
             <li class="bli">
               <a href="#userModal" class="bjx" data-toggle="modal">
-                Friends
-                <h6 class="aal">12M</h6>
+                Babblers
+                <h6 class="aal">0</h6>
               </a>
             </li>
 
             <li class="bli">
               <a href="#userModal" class="bjx" data-toggle="modal">
-                Enemies
-                <h6 class="aal">1</h6>
+                Lanzamientos
+                <h6 class="aal">0</h6>
               </a>
             </li>
           </ul>
@@ -331,7 +351,7 @@ Babbler
           <h6 class="abd">Photos <small>· <a href="#">Edit</a></small></h6>
           <div data-grid="images" data-target-height="150">
             <div>
-              <img data-width="640" data-height="640" data-action="zoom" src="assets/img/instagram_5.jpg">
+              <img data-width="640" data-height="640" data-action="zoom" src="{{asset ('img/lognavbar.png')}}">
             </div>
 
             <div>
@@ -364,10 +384,12 @@ Babbler
 
         <li class="oq b acx">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Message">
+            <input type="text" class="form-control" placeholder="¿Que deseas lanzar?...">
             <div class="jq">
               <button type="button" class="cg kt uo">
-                <span class="h awl"></span>
+                <span class="btn btn-default btn-file">
+                    <span class="h awl"></span> <input type="file">
+                </span>
               </button>
             </div>
           </div>
@@ -404,76 +426,6 @@ Babbler
                 <img data-action="zoom" data-width="1048" data-height="700" src="assets/img/unsplash_2.jpg">
               </div>
             </div>
-
-            <ul class="bkt aaw">
-              <li class="oq abd">
-                <img
-                  class="bkp ru uk abc"
-                  src="assets/img/avatar-fat.jpg">
-                <div class="or">
-                  <strong>Jacon Thornton: </strong>
-                  Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis.
-                </div>
-              </li>
-              <li class="oq">
-                <img
-                  class="bkp ru uk abc"
-                  src="assets/img/avatar-mdo.png">
-                <div class="or">
-                  <strong>Mark Otto: </strong>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-                </div>
-              </li>
-            </ul>
-          </div>
-        </li>
-
-        <li class="oq b acx">
-          <img
-            class="bkp ru uk abc"
-            src="assets/img/avatar-fat.jpg">
-          <div class="or">
-            <div class="bla">
-              <div class="bky">
-                <small class="zc asz">12 min</small>
-                <h6>Jacob Thornton</h6>
-              </div>
-              <p>
-                Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-            </div>
-          </div>
-        </li>
-
-        <li class="oq b acx">
-          <img
-            class="bkp ru uk abc"
-            src="assets/img/avatar-mdo.png">
-          <div class="or">
-            <div class="bky">
-              <small class="zc asz">34 min</small>
-              <h6>Mark Otto</h6>
-            </div>
-
-            <p>
-              Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-            </p>
-
-            <div class="bkv" data-grid="images">
-              <img style="display: none" data-width="640" data-height="640" data-action="zoom" src="assets/img/instagram_3.jpg">
-            </div>
-
-            <ul class="bkt">
-              <li class="oq">
-                <img
-                  class="bkp ru uk abc"
-                  src="assets/img/avatar-dhg.png">
-                <div class="or">
-                  <strong>Dave Gamache: </strong>
-                  Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis.
-                </div>
-              </li>
-            </ul>
           </div>
         </li>
       </ul>
@@ -481,28 +433,17 @@ Babbler
     <div class="fj">
       <div class="alert oj alert-dismissible ro sp" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <a class="oe" href="profile/index.html">Visit your profile!</a> Check your self, you aren't looking well.
+        <center><a class="oe" href="profile/index.html" style="text-decoration: none;">Babblers</center><br> Mira la sección de tus babblers.</a>
       </div>
 
       <div class="mu abk ro sp">
         <div class="mv">
-          <h6 class="abd">Sponsored</h6>
-          <div data-grid="images" data-target-height="150">
-            <img class="bkp" data-width="640" data-height="640" data-action="zoom" src="assets/img/instagram_2.jpg">
-          </div>
-          <p><strong>It might be time to visit Iceland.</strong> Iceland is so chill, and everything looks cool here. Also, we heard the people are pretty nice. What are you waiting for?</p>
-          <button class="cg la ll">Buy a ticket</button>
-        </div>
-      </div>
-
-      <div class="mu abk ro sp">
-        <div class="mv">
-        <h6 class="abd">Likes <small>· <a href="#">View All</a></small></h6>
+        <h6 class="abd">Babblers <small>· <a href="#">Ver todos</a></small></h6>
         <ul class="bkt bku">
           <li class="oq aaw">
             <img
               class="bkp ru uk abc"
-              src="assets/img/avatar-fat.jpg">
+              src="{{asset ('img/log2.png')}}">
             <div class="or">
               <strong>Jacob Thornton</strong> @fat
               <div class="bkx">
@@ -511,11 +452,11 @@ Babbler
               </div>
             </div>
           </li>
-           <li class="oq">
+          <li class="oq">
             <a class="blq" href="#">
               <img
                 class="bkp ru uk abc"
-                src="assets/img/avatar-mdo.png">
+                src="{{asset ('img/log2.png')}}">
             </a>
             <div class="or">
               <strong>Mark Otto</strong> @mdo
@@ -526,9 +467,6 @@ Babbler
             </div>
           </li>
         </ul>
-        </div>
-        <div class="nb">
-          Dave really likes these nerds, no one knows why though.
         </div>
       </div>
 
