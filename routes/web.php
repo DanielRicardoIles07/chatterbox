@@ -16,10 +16,15 @@ Route::get('', function () {
 });
 
 
+Route::get('/babbler/template', function () {
+    return view('babbler_template');
+});
+
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('babblers/complete/information', 'DevelopersEditController');
 Route::resource('developers/', 'DevelopersController');
+
 
 
 
