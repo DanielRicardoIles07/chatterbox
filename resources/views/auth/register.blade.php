@@ -1,116 +1,103 @@
-
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=500, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="stylesheet" type="text/css" href="{!! asset('css/login.css') !!}">
-    <title>Babbler</title>
-    <link rel="icon" type="img/png" href="{{ asset ('img/log2.png')}}">
-    <!-- Bootstrap core CSS -->
-    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!-- Custom styles for this template -->
-    <link href="http://getbootstrap.com/docs/4.0/examples/cover/cover.css" rel="stylesheet">
-  </head>
-  <style type="text/css">
-    body{
-      background-image: url("{!! asset('img/wp7.png') !!}");
-    }
-  </style>
-  <body>
-
-    <div class="site-wrapper">
-      <div class="site-wrapper-inner">
-        <div class="cover-container">
-          <header class="masthead clearfix">
-            <div class="inner">
-              <nav class="nav nav-masthead">
-                <a class="nav-link " href="{{ url('') }}">Iniciar Sesion</a>
-                <a class="nav-link active" href="{{ route('register') }}">Registrarme</a>
-              </nav>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Babbler</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+<link rel="icon" type="img/png" href="{{asset ('img/log2.png')}}">
+<link rel="stylesheet" type="text/css" href="http://getbootstrap.com/docs/4.0/examples/sticky-footer-navbar/sticky-footer-navbar.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+body {
+  font-family: "Raleway", Arial, sans-serif;
+}
+.w3-row img {
+  margin-bottom: -800px
+}
+.w3-content{
+  border-bottom: solid gray 1px;
+}
+.l{
+  color: rgb(0,162,232);
+}
+#r{
+  text-decoration: none;
+  padding: 10px;
+  font-size: 18px;
+  color: black;
+}
+footer{
+  border-top: solid gray 1px;
+}
+</style>
+<body>
+<div class="w3-content" style="max-width:1800px; max-height: 78px">
+  <header class="w3-container w3-xlarge w3-padding-30">
+    <!--<a href="#" class="w3-left w3-button w3-white">Bab<l class="l">bler</l></a>-->
+    <a href="#about" id="r" class="w3-left w3-white"><img src="{{asset('img/log2.png')}}" class="img-circle" alt="Cinque Terre" width="30" height="30"></a>
+    <a href="{{route('register')}}" id="r" class="w3-right w3-white">Registrarme</a>
+    <a href="{{url('')}}" id="r" class="w3-right w3-white">Iniciar Sesion</a>
+  </header>
+</div>
+<div class="container">
+    <h1 class="w3-center"> Vamos Estas a poco de ser un miembro babbler! </h1><br>
+    <div class="row">
+        <div class="col-md-5 col-md-offset-4">
+          <h3 class="w3-center">Registrate!</h3>
+          <form  method="POST" action="{{ route('register') }}">
+                        {{ csrf_field() }}
+            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+              <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus="" placeholder="Nombres">
+                @if ($errors->has('name'))
+                  <span class="help-block">
+                    <strong>{{ $errors->first('name') }}</strong>
+                  </span>
+                @endif                        
             </div>
-          </header>
-          </div>
-          <div class="col-sm-4"></div>
-          
-          <div class="col-sm-4">
-            <div class="content-fluid">
+            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+              <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required placeholder="Correo Electronico">
 
-      <div class="modal-header">
-        <h4>Registrate</h4>
-
-      </div> 
-      <div class="modal-body">
-
-         <form class="new_user" id="new_user" role="form" method="POST" action="{{ route('register') }}">
-                {{ csrf_field() }}
-            <!--nombres-->
-          <div class="form-group">
-            <div class="input-group field{{ $errors->has('name') ? ' has-error' : '' }}">
-              <input autofocus="autofocus" class="form-control" placeholder="Nombres y apellidos*" type="text" required="" name="name" id="name">
-              <label for="uLogin" class="input-group-addon glyphicon glyphicon-user"></label>
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif                        
             </div>
-          </div> 
-          @if ($errors->has('name|'))
-        <span class="help-block">
-          <strong>{{ $errors->first('name|') }}</strong>
-        </span>
-        @endif
-        <!--correo  -->
-        <div class="form-group">
-            <div class="input-group field{{ $errors->has('email') ? ' has-error' : '' }}">
-              <input autofocus="autofocus" class="form-control" placeholder="Correo Electronico*" type="email" required="" name="email" id="name">
-              <label for="uLogin" class="input-group-addon glyphicon glyphicon-envelope"></label>
-            </div>
-          </div> 
-          @if ($errors->has('email'))
-              <span class="help-block">
-                  <strong>{{ $errors->first('email') }}</strong>
-              </span>
-          @endif
-          <!--contraseña1  -->
-          <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-            <div class="input-group">
-              <input id="password" type="password" class="form-control" name="password" required="" placeholder="Contraseña*">
-              <label for="uPassword" class="input-group-addon glyphicon glyphicon-lock"></label>
-            </div>
-              @if ($errors->has('password'))
-                <span class="help-block">
-                 <strong>{{ $errors->first('password') }}</strong>
-                </span>
-              @endif
-          </div>
-          <!--contraseña2  -->
-          <div class="form-group">
-            <div class="input-group">
-              <input placeholder="Confirmar Contraseña*" class="form-control" id="password-confirm" type="password" name="password_confirmation" required>
-              <label for="uPassword" class="input-group-addon glyphicon glyphicon-lock"></label>
-            </div> 
-          </div>
-      </div> 
+            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                                <input id="password" type="password" class="form-control" name="password" required placeholder="Contraseña">
 
-      <div class="modal-footer">
-        <div class="col-sm-4"></div>
-        <div class="col-sm-4"><button type="submit" class="btn btn-default">Registarme</button></div>
-      </div>
-      <br>
-    </form>
-          </div>
-          <div class="col-sm-4"></div>
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                        </div>
+                        <div class="form-group">
+
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required placeholder="Confirma tu contraseña">
+
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-success btn-block btn-lg">
+                                    Registrarme
+                                </button>
+                            </div>
+                        </div>
+          </form>
         </div>
-      </div>
     </div>
-    <footer class="mastfoot">
-        <p>ChatterBox <a href="https://twitter.com/daniel_dr7">@Dr7</a>.</p>
+    <br> <br> <br> <br> 
+</div>
+<!-- /bootstrap grid example -->
+<footer class="footer">
+      <div class="">
+        <a href="https://www.facebook.com/danielricardo.iles" id="r" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i> dr7</a>
+      </div>
     </footer>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script  src="js/index.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="http://getbootstrap.com/assets/js/vendor/popper.min.js"></script>
-    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-  </body>
+</body>
 </html>

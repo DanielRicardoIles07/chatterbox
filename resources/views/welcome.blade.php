@@ -44,8 +44,8 @@ footer{
   <header class="w3-container w3-xlarge w3-padding-30">
     <!--<a href="#" class="w3-left w3-button w3-white">Bab<l class="l">bler</l></a>-->
     <a href="#about" id="r" class="w3-left w3-white"><img src="{{asset('img/log2.png')}}" class="img-circle" alt="Cinque Terre" width="30" height="30"></a>
-    <a href="#about" id="r" class="w3-right w3-white">Registrarme</a>
-    <a href="#about" id="r" class="w3-right w3-white">Iniciar Sesion</a>
+    <a href="{{route('register')}}" id="r" class="w3-right w3-white">Registrarme</a>
+    <a href="{{url('')}}" id="r" class="w3-right w3-white">Iniciar Sesion</a>
   </header>
 </div>
 <div class="container">
